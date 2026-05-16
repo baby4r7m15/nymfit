@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Trans flag dark background — deep navy with blue tint */
+    --background: 213 35% 10%;
+    --foreground: 210 40% 96%;
+
+    --card: 213 30% 14%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 213 30% 14%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Trans pink — primary */
+    --primary: 350 100% 82%;
+    --primary-foreground: 350 40% 15%;
+
+    /* Trans blue — secondary */
+    --secondary: 199 100% 74%;
+    --secondary-foreground: 213 40% 8%;
+
+    --muted: 213 25% 18%;
+    --muted-foreground: 213 18% 58%;
+
+    /* Soft blue accent */
+    --accent: 213 40% 19%;
+    --accent-foreground: 199 100% 82%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 25% 22%;
+    --input: 213 25% 22%;
+    --ring: 350 100% 82%;
+
+    --chart-1: 350 100% 82%;
+    --chart-2: 199 100% 74%;
+    --chart-3: 0 0% 96%;
+    --chart-4: 270 60% 75%;
+    --chart-5: 160 45% 65%;
+
+    --radius: 1.25rem;
+
+    --sidebar-background: 213 35% 11%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 350 100% 82%;
+    --sidebar-primary-foreground: 350 40% 15%;
+    --sidebar-accent: 213 35% 17%;
+    --sidebar-accent-foreground: 199 100% 82%;
+    --sidebar-border: 213 25% 18%;
+    --sidebar-ring: 350 100% 82%;
+
+    --font-display: 'Pacifico', cursive;
+    --font-script: 'Great Vibes', cursive;
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body {
+    overscroll-behavior-y: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+  }
+  /* Hide scrollbar but keep scrollable */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  /* Safe area padding helpers */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+.bg-sniff-gradient {
+  background: linear-gradient(135deg, hsl(213 35% 10%) 0%, hsl(213 30% 14%) 50%, hsl(213 35% 10%) 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(180deg, hsl(199 100% 74%) 0%, hsl(0 0% 100%) 50%, hsl(350 100% 82%) 100%);
+}
+
+.glow-pink {
+  box-shadow: 0 0 40px hsl(350 100% 82% / 0.3), 0 0 80px hsl(350 100% 82% / 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px hsl(199 100% 74% / 0.25), 0 0 80px hsl(199 100% 74% / 0.12);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, hsl(350 100% 82%) 0%, hsl(199 100% 74%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bubble-border {
+  border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+}
+
+.card-glow {
+  background: linear-gradient(135deg, hsl(213 35% 10%) 0%, hsl(213 30% 14%) 100%);
+  border: 1px solid hsl(213 25% 20%);
+}
