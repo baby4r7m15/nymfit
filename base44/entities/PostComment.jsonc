@@ -1,0 +1,40 @@
+{
+  "name": "PostComment",
+  "type": "object",
+  "properties": {
+    "post_id": {
+      "type": "string",
+      "description": "ID of the community post this comment belongs to"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the commenter"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the commenter"
+    },
+    "avatar_emoji": {
+      "type": "string",
+      "description": "Emoji avatar"
+    },
+    "text": {
+      "type": "string",
+      "description": "Comment text"
+    }
+  },
+  "required": [
+    "post_id",
+    "text"
+  ],
+  "rls": {
+    "create": true,
+    "read": true,
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

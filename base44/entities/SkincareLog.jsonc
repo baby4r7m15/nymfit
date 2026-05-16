@@ -1,0 +1,70 @@
+{
+  "name": "SkincareLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of log"
+    },
+    "routine": {
+      "type": "string",
+      "enum": [
+        "am",
+        "pm",
+        "both"
+      ],
+      "description": "Morning, evening, or both"
+    },
+    "products_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Products used"
+    },
+    "skin_feel": {
+      "type": "string",
+      "enum": [
+        "glowing",
+        "hydrated",
+        "normal",
+        "dry",
+        "oily",
+        "sensitive",
+        "breakout"
+      ],
+      "description": "How skin felt"
+    },
+    "concerns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Concerns noted (acne, redness, etc.)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Optional progress photo"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

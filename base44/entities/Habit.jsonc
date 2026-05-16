@@ -1,0 +1,72 @@
+{
+  "name": "Habit",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Habit name"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "Emoji icon for the habit",
+      "default": "\u2b50"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "health",
+        "wellness",
+        "fitness",
+        "mindset",
+        "beauty",
+        "sleep",
+        "nutrition",
+        "other"
+      ],
+      "default": "wellness",
+      "description": "Habit category"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "custom"
+      ],
+      "default": "daily",
+      "description": "How often the habit should be done"
+    },
+    "days_of_week": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Days of week (0=Sun, 6=Sat) for custom/weekly frequency"
+    },
+    "weekly_target": {
+      "type": "number",
+      "default": 7,
+      "description": "Target completions per week"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether habit is currently active"
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

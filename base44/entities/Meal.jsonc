@@ -1,0 +1,54 @@
+{
+  "name": "Meal",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the meal"
+    },
+    "meal_type": {
+      "type": "string",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "description": "Type of meal"
+    },
+    "calories": {
+      "type": "number",
+      "description": "Calories per serving"
+    },
+    "protein_g": {
+      "type": "number",
+      "description": "Protein in grams"
+    },
+    "carbs_g": {
+      "type": "number",
+      "description": "Carbohydrates in grams"
+    },
+    "fat_g": {
+      "type": "number",
+      "description": "Fat in grams"
+    },
+    "ingredients": {
+      "type": "string",
+      "description": "Ingredients list"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Preparation notes or tips"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags like 'low-carb', 'high-protein', 'vegan'"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

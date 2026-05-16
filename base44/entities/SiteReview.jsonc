@@ -1,0 +1,41 @@
+{
+  "name": "SiteReview",
+  "type": "object",
+  "properties": {
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the reviewer"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the reviewer"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Star rating 1-5"
+    },
+    "text": {
+      "type": "string",
+      "description": "Review text"
+    },
+    "visible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the review is shown on the landing page"
+    }
+  },
+  "required": [
+    "text",
+    "rating"
+  ],
+  "rls": {
+    "create": true,
+    "read": true,
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

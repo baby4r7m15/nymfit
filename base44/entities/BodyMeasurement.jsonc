@@ -1,0 +1,54 @@
+{
+  "name": "BodyMeasurement",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of measurement"
+    },
+    "weight_kg": {
+      "type": "number",
+      "description": "Body weight in kilograms"
+    },
+    "waist_cm": {
+      "type": "number",
+      "description": "Waist circumference in cm"
+    },
+    "hips_cm": {
+      "type": "number",
+      "description": "Hip circumference in cm"
+    },
+    "thighs_cm": {
+      "type": "number",
+      "description": "Thigh circumference in cm"
+    },
+    "chest_cm": {
+      "type": "number",
+      "description": "Chest circumference in cm"
+    },
+    "body_fat_percent": {
+      "type": "number",
+      "description": "Estimated body fat percentage"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes about the day"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

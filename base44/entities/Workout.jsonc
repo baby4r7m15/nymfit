@@ -1,0 +1,64 @@
+{
+  "name": "Workout",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the workout"
+    },
+    "focus": {
+      "type": "string",
+      "enum": [
+        "glutes",
+        "legs",
+        "core",
+        "upper_body",
+        "cardio",
+        "full_body",
+        "flexibility"
+      ],
+      "description": "Primary focus area"
+    },
+    "duration_min": {
+      "type": "number",
+      "description": "Estimated duration in minutes"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "beginner"
+    },
+    "exercises": {
+      "type": "array",
+      "description": "Exercises in the workout",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "sets": {
+            "type": "number"
+          },
+          "reps": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "General workout notes or cues"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "CommunityPost",
+  "type": "object",
+  "properties": {
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the poster"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the poster (auto-filled)"
+    },
+    "avatar_emoji": {
+      "type": "string",
+      "description": "Chosen emoji avatar"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Short story or caption"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Progress photo URL"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags like glowup, transformation, etc."
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of hearts"
+    }
+  },
+  "required": [
+    "caption"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "DailyLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the log"
+    },
+    "meals_eaten": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of meals eaten today"
+    },
+    "food_entries": {
+      "type": "array",
+      "description": "Quick food log entries",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "calories": {
+            "type": "number"
+          },
+          "meal_type": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "drink_entries": {
+      "type": "array",
+      "description": "Drinks logged today",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount_ml": {
+            "type": "number"
+          },
+          "drink_type": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "workouts_done": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of workouts completed today"
+    },
+    "habits_done": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs/keys of habits completed today"
+    },
+    "hrt_taken": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of HRT medications taken today"
+    },
+    "water_glasses": {
+      "type": "number",
+      "default": 0,
+      "description": "Glasses of water consumed"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "great",
+        "good",
+        "okay",
+        "low"
+      ],
+      "description": "Mood of the day"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Reflections on the day"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

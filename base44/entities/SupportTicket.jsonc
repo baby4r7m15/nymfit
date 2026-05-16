@@ -1,0 +1,58 @@
+{
+  "name": "SupportTicket",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "general_inquiry",
+        "technical_issue",
+        "billing_question",
+        "feedback"
+      ],
+      "description": "Support category"
+    },
+    "message": {
+      "type": "string",
+      "description": "User's message"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "pending",
+        "closed"
+      ],
+      "default": "open",
+      "description": "Ticket status"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of submitter"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of submitter"
+    },
+    "admin_reply": {
+      "type": "string",
+      "description": "Admin reply message"
+    }
+  },
+  "required": [
+    "message",
+    "category"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "FemmeLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date"
+    },
+    "outfit_rating": {
+      "type": "number",
+      "description": "Outfit confidence 1-5"
+    },
+    "makeup_done": {
+      "type": "boolean",
+      "default": false,
+      "description": "Did makeup today"
+    },
+    "hair_done": {
+      "type": "boolean",
+      "default": false,
+      "description": "Styled hair today"
+    },
+    "nails_done": {
+      "type": "boolean",
+      "default": false,
+      "description": "Painted/maintained nails"
+    },
+    "passing_feels": {
+      "type": "number",
+      "description": "How femme/passing you felt 1-10"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "Overall confidence 1-10"
+    },
+    "femme_habits_done": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Femme habits completed"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Journal notes"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

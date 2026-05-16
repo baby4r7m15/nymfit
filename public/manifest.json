@@ -1,0 +1,26 @@
+{
+  "name": "NymFit",
+  "short_name": "NymFit",
+  "description": "Your gentle glow-up tracker & community. Soft goals, real progress.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf2f8",
+  "theme_color": "#f472b6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/TqHKGTC.png",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.imgur.com/TqHKGTC.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"],
+  "screenshots": []
+}

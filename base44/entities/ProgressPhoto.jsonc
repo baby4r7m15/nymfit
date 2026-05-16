@@ -1,0 +1,47 @@
+{
+  "name": "ProgressPhoto",
+  "type": "object",
+  "properties": {
+    "photo_url": {
+      "type": "string",
+      "description": "URL of the uploaded photo"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the photo was taken"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags like front, side, back, face"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Personal notes for this photo"
+    },
+    "linked_log_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Daily log date this photo is linked to"
+    }
+  },
+  "required": [
+    "photo_url",
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

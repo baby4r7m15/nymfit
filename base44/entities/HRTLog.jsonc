@@ -1,0 +1,77 @@
+{
+  "name": "HRTLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of this log entry"
+    },
+    "medication_id": {
+      "type": "string",
+      "description": "Key matching hrt_medications on user profile"
+    },
+    "medication_name": {
+      "type": "string",
+      "description": "Display name of the medication"
+    },
+    "dose": {
+      "type": "string",
+      "description": "Dose taken (e.g. 2mg, 0.5ml)"
+    },
+    "route": {
+      "type": "string",
+      "enum": [
+        "oral",
+        "sublingual",
+        "transdermal",
+        "injection",
+        "gel",
+        "patch",
+        "other"
+      ],
+      "description": "Administration route"
+    },
+    "time_taken": {
+      "type": "string",
+      "description": "Time taken (HH:MM)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes"
+    },
+    "side_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Any side effects noted"
+    },
+    "mood_after": {
+      "type": "string",
+      "enum": [
+        "great",
+        "good",
+        "okay",
+        "low"
+      ],
+      "description": "Mood after taking"
+    }
+  },
+  "required": [
+    "date",
+    "medication_name"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

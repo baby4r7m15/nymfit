@@ -1,0 +1,145 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "user"
+      ],
+      "default": "user"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "avatar_emoji": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "height_cm": {
+      "type": "number",
+      "description": "Height in cm"
+    },
+    "weight_kg": {
+      "type": "number",
+      "description": "Weight in kg"
+    },
+    "daily_goals": {
+      "type": "object",
+      "description": "User-defined daily goals",
+      "properties": {
+        "water_glasses": {
+          "type": "number",
+          "default": 8
+        },
+        "calories": {
+          "type": "number"
+        },
+        "habits_target": {
+          "type": "number",
+          "default": 4
+        },
+        "custom_goals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "emoji": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "wellness_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Selected wellness goals"
+    },
+    "active_badge": {
+      "type": "string"
+    },
+    "earned_badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Earned badge IDs"
+    },
+    "hidden_badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Hidden badge IDs"
+    },
+    "is_premium": {
+      "type": "boolean",
+      "default": false
+    },
+    "onboarding_done": {
+      "type": "boolean",
+      "default": false
+    },
+    "following": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of user emails this user follows",
+      "default": []
+    },
+    "theme": {
+      "type": "string",
+      "description": "Active UI theme key"
+    },
+    "premium_features": {
+      "type": "object",
+      "description": "Per-feature premium access flags set by admin",
+      "properties": {
+        "advanced_analytics": {
+          "type": "boolean",
+          "default": false
+        },
+        "ai_coach": {
+          "type": "boolean",
+          "default": false
+        },
+        "custom_themes": {
+          "type": "boolean",
+          "default": false
+        },
+        "unlimited_habits": {
+          "type": "boolean",
+          "default": false
+        },
+        "progress_reports": {
+          "type": "boolean",
+          "default": false
+        },
+        "priority_support": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
+}

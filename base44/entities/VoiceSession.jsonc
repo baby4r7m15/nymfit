@@ -1,0 +1,58 @@
+{
+  "name": "VoiceSession",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of session"
+    },
+    "duration_min": {
+      "type": "number",
+      "description": "Session duration in minutes"
+    },
+    "exercise_type": {
+      "type": "string",
+      "enum": [
+        "pitch",
+        "resonance",
+        "intonation",
+        "breathing",
+        "full_practice",
+        "other"
+      ],
+      "description": "Type of voice exercise"
+    },
+    "pitch_hz": {
+      "type": "number",
+      "description": "Estimated average pitch in Hz"
+    },
+    "comfort_level": {
+      "type": "number",
+      "description": "Comfort 1-5"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Session notes / exercises done"
+    },
+    "recording_url": {
+      "type": "string",
+      "description": "Optional recording URL"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "update": {
+      "created_by": "{{user.email}}"
+    },
+    "delete": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
